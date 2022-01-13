@@ -1,0 +1,29 @@
+agenda.txt
+
+
+
+-21_9
+
+    laberint.
+    crec que hi ha alguna forma més eficient de fer-ho.
+
+-28_9
+
+    tenir utilitzar codi d'un altre fixer2.c podem simplement definir la capsalera de les funciones de fixer2.c:
+    void f();
+    void g();
+    
+    o podem crear una fixer2.h amb les capsaleres de les funcions de fixer2.c i dins del nostre document fem:
+    #include "fixer3.h"
+    
+    per compliar més d'un fixer c fem
+
+    "gcc fixer1.c  fixer2.c -0 executable"
+
+    o si tenim molts, podem compilar tots els docs del projecte:
+
+    "gcc *.c -o exe"
+
+    per definir variables globals en més d'un fixer es fa
+    int VAR; (fixer 1)
+    extern int VAR; (fixer 2) estem dient que VAR és global i que esta definida en un altre fixer.

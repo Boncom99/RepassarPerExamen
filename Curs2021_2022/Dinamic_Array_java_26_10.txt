@@ -1,0 +1,9 @@
+import java.util;
+import java.util.ArrayList;
+
+
+funcions que utilitzarem:
+add() afegir un element al final de la array.
+get() llegir un element de la array.
+remove() passant-li el index o l'objecte.
+size()

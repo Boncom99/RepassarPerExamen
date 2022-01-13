@@ -1,0 +1,89 @@
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
+//Pseudocodi
+class Figura {
+    int x, y; // aixi ens evitem definir x i y per totes les figures.
+}
+
+class Rectangle extends Figura {
+
+    // int x, y;
+    int amplada, llargada;
+
+    Rectang(int x, int y, int amplada, int llargada){
+        //volem guardar les variables que entren en les varaibles de la classe.
+        this.x=x;
+        this.y=y;
+        this.amplada=amplada;
+        this.llargada=llargada;
+    }
+
+    double Area() {
+        return amplada * llargada;
+    }
+
+}
+
+Class Cercle extends Figura{
+    // int x, y;
+    int radi;
+
+    cercle(int x, int y, int radi){
+        this.x=x;
+        this.y=y;
+        this.radi=radi;
+}
+
+    double area() {
+        return Math.PI * radi * radi;
+    }
+
+}
+
+
+
+  // OPCIÓ 1
+  
+      Rectangle r = new Rectangle[30]; // creem array de rectangles! només reservem el espai, pero no creem cap rectangle 
+      Cercle c = new Cercle[20];
+        r[0]=new Rectangle(10,10,20,10);
+        c[0]=new Cercle(10,12,3);
+         for( int i = 0;i<r.lenght;i++){
+              System.out.println(r[i].area()); 
+        }
+
+    // OPCIÓ 2
+    Figura f = new Figura[60];
+    f[0]=new Cercle(20,1,30);
+    f[1]=new Rectangle(10,3,12,30);
+    ...
+    for(int i ....){
+        if(f[i] instanceof Rectangle){
+            System.out.println((Rectangle)f[i].area()); //cal convertir-lo en un rectangle.
+        }
+         if(f[i] instanceof Cercle){
+            System.out.println((Cercle)f[i].area()); 
+        }
+    }
+
+
+    //OPCIÓ 3 (ABSTRACT)
+
+    //modificar la classe Figura (classe base)
+    //no es poden crear objectes d'una classe abstract! ( aka, No es pot Figura f= new Figura).
+    //El que si que podem fer es Figura f = new Figura[20].
+    //ja que no esta creant cap figura, només esta reservant l'espai per 20 figures.
+    abstract class Figura {
+        int x, y;
+        abstract double area(); //vol dir que la funció estarà definida en cada child de la classe. 
+    }
+    
+    // aixo implica que podrem fer
+    figura[i].area() 
+    //sense preguntar quin tipus de figura és.
+
+    //en cada child de la classe hem de definir la funció area!
+
+
+
+    //C++ abstract es diu Virtual
